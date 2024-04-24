@@ -9,11 +9,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EXtravio',
+      title: 'Extravio',
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+      },
     );
   }
 }

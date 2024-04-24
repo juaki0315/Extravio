@@ -3,24 +3,23 @@ import 'package:flutter/material.dart';
 class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      backgroundColor: Colors.grey[200],
-      items: <BottomNavigationBarItem>[
-        _buildBottomNavigationBarItem(Icons.home),
-        _buildBottomNavigationBarItem(Icons.search),
-        _buildBottomNavigationBarItem(Icons.explore),
-        _buildBottomNavigationBarItem(Icons.person),
-      ],
-    );
-  }
-
-  BottomNavigationBarItem _buildBottomNavigationBarItem(IconData icon) {
-    return BottomNavigationBarItem(
-        icon: Icon(
-          icon,
-          color: Colors.orange,
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          bottomNavigationBar: Material(
+            color: Colors.grey[200],
+            child: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.home, color: Colors.orange)),
+                Tab(icon: Icon(Icons.search, color: Colors.orange)),
+                Tab(icon: Icon(Icons.person, color: Colors.orange)),
+              ],
+              indicatorColor: Colors.orange,
+            ),
+          ),
         ),
-        label: '',
-        backgroundColor: Colors.grey[200]);
+      ),
+    );
   }
 }
